@@ -1,0 +1,26 @@
+.light {
+    color: yellow;
+
+    
+}
+
+#light :not(.light){
+    color: black;
+
+}
+
+
+
+#light {
+    border-radius: 50%;
+}
+
+body {
+    background-color: rgb(26, 26, 26);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
