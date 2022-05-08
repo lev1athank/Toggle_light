@@ -1,6 +1,10 @@
 var x = new XMLHttpRequest();
 const time = 2
 var id;
+
+
+
+
 function send_request(id = null) {
     var url = "https://api.telegram.org/bot5104688774:AAFZr02MVqTE3shadMVbxQ9c-t9JIWOo_BE/getUpdates"
     if(id) {
@@ -11,14 +15,21 @@ function send_request(id = null) {
     return JSON.parse(x.responseText)
 }
 
+const light = document.querySelector("#light")
 function toggle_light(state) {
-    document.querySelector("#light").classList.toggle("light")
+    if(state) 
+        light.classList.add("light")
+    else
+        light.classList.remove("light")
 }
 
-function send_user(text) {
-    if(text) {
 
-    }
+function send_user(text) {
+
+    fetch("https://api.telegram.org/bot5104688774:AAFZr02MVqTE3shadMVbxQ9c-t9JIWOo_BE/sendMessage?chat_id=804206736&text="+text)
+    fetch("https://api.telegram.org/bot5104688774:AAFZr02MVqTE3shadMVbxQ9c-t9JIWOo_BE/sendMessage?chat_id=804206736&text="+ "доступны команды: 'вкл', 'включить', 'выкл', 'выключить'")
+    
+
     
 }
 
